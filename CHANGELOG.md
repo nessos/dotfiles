@@ -2,15 +2,57 @@
 
 All notable changes to this project will be documented in this file.
 
-## 27/03/2019
+## 04/09/2019
 
-- Removes documentation requirement for partials
-- Ignores distributable libraries in source control
+- Allows partial elements to be undocumented
+- Allows literal strings to be hardcoded instead of in resx files
+- Adds new editorConfig settings
+- Changes default language version to preview in order to use C# 8.0 features
+- Ignores requirement for static messages in serilog analyzer (using custom solution)
 
-## 26/03/2019
+## 02/09/2019
 
-- Fixes company name
-- Removes Git For Windows last seen version
+- Ignores missing documentation (enabled by generating doc xml)
+
+## 17/08/2019
+
+- Enables Nullable Context by default on all projects
+
+## 30/07/2019
+
+- Ruleset now ignores CA2007
+
+## 29/07/2019
+
+- Libman libraries should not be commited to source control
+- Removes compiled sass & js assets from source control
+- Adds gulpfile.js for common sass/js tasks
+- Adds a task to restore node modules
+- Adds Microsoft Code Analysis as an analyzer
+- Recreates analyzer ruleset
+
+## 24/07/2019
+
+- Adds some minor tweaks for submodules
+- Orders gitconfig by configuration group name (apart from [user])
+
+## 23/07/2019
+
+- Ignores VS cache globally
+
+## 07/06/2019
+
+- Sets default file encoding as UTF-8
+- Enables submodule recursion by default for git
+
+## 06/06/2019
+
+- Adds new option for default import placement
+- Adds Serilog roslyn analysers for common logging errors in .Net projects
+
+## 08/05/2019
+
+- Sanitizes gitconfig as much as possible for Windows/Linux interop
 
 ## 21/03/2019
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RuleSet Name="AKritikos Ruleset" Description="Common ruleset for projects" ToolsVersion="15.0">
+<RuleSet Name="Kritikos Ruleset" Description="Common roslyn analyser configuration" ToolsVersion="10.0">
   <Rules AnalyzerId="AsyncUsageAnalyzers" RuleNamespace="AsyncUsageAnalyzers">
     <Rule Id="AvoidAsyncSuffix" Action="Warning" />
     <Rule Id="AvoidAsyncVoid" Action="Warning" />
@@ -10,6 +10,13 @@
     <Rule Id="CS1573" Action="None" />
     <Rule Id="CS1591" Action="None" />
     <Rule Id="CS2008" Action="None" />
+  </Rules>
+  <Rules AnalyzerId="Microsoft.CodeQuality.Analyzers" RuleNamespace="Microsoft.CodeQuality.Analyzers">
+    <Rule Id="CA1303" Action="None" />
+    <Rule Id="CA2007" Action="None" />
+  </Rules>
+  <Rules AnalyzerId="SerilogAnalyzer" RuleNamespace="SerilogAnalyzer">
+    <Rule Id="Serilog004" Action="None" />
   </Rules>
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
     <Rule Id="SA0001" Action="None" />

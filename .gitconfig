@@ -1,36 +1,56 @@
-[user]
+[alias]
+	clone = 'clone --recurse-submodules'
+	lgfull = log --oneline --decorate --color --graph
+	lg = log --oneline --decorate --color
+[column]
+	ui = auto,row,dense
 [commit]
 	gpgsign = true
-[gpg]
-	program = c:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
-[credential]
-	helper = wincred
 [core]
 	autocrlf = true
 	symlinks = true
-	sshCommand = 'C:\\Windows\\System32\\OpenSSH\\ssh.exe'
-	editor = \"C:/Program Files/Microsoft VS Code/code.exe\" --wait
+	hideDotFiles = true
+	##WIN ONLY sshCommand = 'C:\\Windows\\System32\\OpenSSH\\ssh.exe'
+	##GUI ONLY editor = code --wait
+	##CLI ONLY editor = vim
+[diff]
+	# guitool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[fetch]
+	prune = true
+	recurseSubmodules = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[gpg]
+	##WIN ONLY program = c:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
+[i18n]
+	filesEncoding = utf-8
 [merge]
-	tool = vscode
-[diff]
-	guitool = vscode
-[pull]
-	rebase = false
-[fetch]
-	prune = false
-[rebase]
-	autoStash = false
-[difftool "vscode"]
-	path = C:/Program Files/Microsoft VS Code/code.exe
-	cmd = \"C:/Program Files/Microsoft VS Code/code.exe\" --wait --diff \"$LOCAL\" \"$REMOTE\"
+	renormalize = true
+	conflictStyle = diff3
+	# tool = vscode
 [mergetool "vscode"]
-	path = C:/Program Files/Microsoft VS Code/code.exe
-	cmd = "\"C:/Program Files/Microsoft VS Code/code.exe\" --wait \"$MERGED\" "
+	cmd = code.exe --wait \"$MERGED\"
+[pull]
+	rebase = true
+[push]
+	recurseSubmodules = on-demand
+	followTags = true
+[rebase]
+	autoStash = true
+	autosquash = true
+[status]
+	renames = true
+	showStash = true
+[submodule]
+	active = .
+	recurse = true
+[tag]
+	forceSignAnnotated = true
 [alias]
 	clone = 'clone --recursive'
 	lgfull = log --oneline --decorate --color --graph
